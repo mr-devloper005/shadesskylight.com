@@ -11,12 +11,12 @@ export type TaskPageVoice = {
 
 export const taskPageVoices = {
   article: {
-    eyebrow: 'Reading desk',
-    headline: 'Long-form articles with a calmer editorial rhythm.',
-    description: 'Use this page for essays, guides, explainers, and story-led posts. The layout should feel like a publication, not a directory.',
-    filterLabel: 'Choose article topic',
-    secondaryNote: 'Reading surfaces need space, hierarchy, and fewer distractions.',
-    chips: ['Editorial pacing', 'Topic filters', 'Long-read friendly'],
+    eyebrow: 'The Reading Room',
+    headline: 'Ideas worth your time — essays, guides, and long-form journalism.',
+    description: 'A calm, editorial home for stories that deserve depth. Filter by topic to explore what catches your eye.',
+    filterLabel: 'Choose a topic',
+    secondaryNote: 'Long reads, deep dives, sharp explainers.',
+    chips: ['Editorial', 'Essays', 'Long-form', 'Guides'],
   },
   classified: {
     eyebrow: 'Notice board',
@@ -51,12 +51,12 @@ export const taskPageVoices = {
     chips: ['Documents', 'Guides', 'Archive ready'],
   },
   listing: {
-    eyebrow: 'Business directory',
-    headline: 'Business listings built for discovery and comparison.',
-    description: 'Listing pages should behave like a directory with trust cues, metadata, and a practical search rhythm.',
-    filterLabel: 'Filter business category',
-    secondaryNote: 'Prioritize comparison, location, and direct action paths.',
-    chips: ['Directory', 'Compare', 'Business discovery'],
+    eyebrow: 'The Directory',
+    headline: 'Trusted businesses, curated for real people making real decisions.',
+    description: 'Discover verified businesses with clear contact details, ratings, and everything you need to reach out with confidence.',
+    filterLabel: 'Choose a category',
+    secondaryNote: 'Verified · Rated · Reachable',
+    chips: ['Verified', 'Local', 'Rated', 'Contact-ready'],
   },
   image: {
     eyebrow: 'Visual gallery',
