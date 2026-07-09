@@ -3,19 +3,19 @@ import { slot4BrandConfig } from '@/editable/theme/brand.config'
 export const pagesContent = {
   home: {
     metadata: {
-      title: 'Stories, visuals, and discoverable content',
-      description: 'Explore articles, images, listings, and curated posts through a cleaner reading-first experience.',
-      openGraphTitle: 'Stories, visuals, and discoverable content',
-      openGraphDescription: 'Discover articles, visual posts, and connected content through a calmer reading-first experience.',
-      keywords: ['story platform', 'article site', 'visual content', 'content discovery'],
+      title: 'Articles, business listings, and useful discussions',
+      description: 'Explore practical articles, business listings, questions, and local discovery on shadesskylight.com.',
+      openGraphTitle: 'Articles, business listings, and useful discussions',
+      openGraphDescription: 'Find articles, business listings, questions, and practical resources for readers and customers.',
+      keywords: ['business listings', 'articles', 'questions', 'local services', 'professional resources'],
     },
     hero: {
-      badge: 'Latest stories and visuals',
-      title: ['A thoughtful home for', 'stories, visuals, and discovery.'],
-      description: 'Explore fresh articles, image-led posts, and discoverable content across the platform through a calmer and clearer browsing experience.',
-      primaryCta: { label: 'Read latest stories', href: '/article' },
-      secondaryCta: { label: 'Explore visuals', href: '/image' },
-      searchPlaceholder: 'Search stories, visuals, listings, and more',
+      badge: 'Latest questions and listings',
+      title: ['Discuss useful ideas,', 'discover businesses, and read practical guides.'],
+      description: 'Browse fresh articles, professional listings, and community-style questions across business, education, lifestyle, health, technology, and finance.',
+      primaryCta: { label: 'Read latest articles', href: '/article' },
+      secondaryCta: { label: 'Explore businesses', href: '/listing' },
+      searchPlaceholder: 'Search articles, businesses, topics, and questions',
       focusLabel: 'Focus',
       featureCardBadge: 'latest cover rotation',
       featureCardTitle: 'Latest posts shape the visual identity of the homepage.',
@@ -23,17 +23,17 @@ export const pagesContent = {
     },
     intro: {
       badge: 'About the platform',
-      title: 'Built for reading, browsing, and connecting different kinds of content.',
+      title: 'Built for reading practical articles and finding useful businesses.',
       paragraphs: [
-        'This site brings together article-style reading, visual browsing, and structured discovery so visitors can move naturally between different content types.',
-        'Instead of separating stories, visuals, and supporting resources into disconnected surfaces, the platform keeps them connected in one place with consistent navigation and easier exploration.',
-        'Whether someone starts with a story, an image-led post, a listing, or a resource page, they can keep discovering related content without friction.',
+        'This site brings together articles, question-led discussions, and business listings so visitors can move naturally between reading and discovery.',
+        'Readers can explore practical explainers while customers and professionals can browse businesses, services, and useful public information.',
+        'Whether someone starts with a question, a guide, or a listing, related content stays easy to scan and open.',
       ],
       sideBadge: 'At a glance',
       sidePoints: [
-        'Reading-first homepage with stronger emphasis on stories and imagery.',
-        'Connected sections for articles, visuals, listings, and supporting resources.',
-        'Cleaner browsing rhythm designed to make exploration feel easier.',
+        'Question-style article feed with clear categories.',
+        'Business listing discovery for services and professionals.',
+        'Search-first browsing for topics, categories, and names.',
         'Lightweight interactions that keep the experience fast and readable.',
       ],
       primaryLink: { label: 'Browse articles', href: '/article' },
@@ -41,8 +41,8 @@ export const pagesContent = {
     },
     cta: {
       badge: 'Start exploring',
-      title: 'Explore articles, visuals, and resources through one connected experience.',
-      description: 'Move between articles, image-led posts, listings, and resources through one clearer and more connected visual system.',
+      title: 'Explore articles and business listings through one connected experience.',
+      description: 'Move between practical guides, questions, services, and business details through one clearer visual system.',
       primaryCta: { label: 'Browse Articles', href: '/article' },
       secondaryCta: { label: 'Contact Sales', href: '/contact' },
     },
@@ -54,7 +54,7 @@ export const pagesContent = {
   about: {
     badge: 'Our Story',
     title: 'A calmer, clearer way to explore content.',
-    description: `${slot4BrandConfig.siteName} is built to make long-form reading, visual discovery, and supporting resources feel like one unified experience.`,
+    description: ``,
     paragraphs: [
       'Instead of splitting everything into disconnected pages, the platform keeps related content easy to move through and easy to understand.',
       'Whether someone starts with an article, listing, image post, or resource page, they can continue exploring without losing context.',
@@ -88,11 +88,11 @@ export const pagesContent = {
     },
     hero: {
       badge: 'Search the archive',
-      title: 'Find stories, listings, visuals, and resources faster.',
-      description: 'Use keywords, categories, and content types to discover posts from every active section of the site.',
-      placeholder: 'Search by keyword, topic, category, or title',
+      title: 'Find articles, business listings, and questions faster.',
+      description: 'Use keywords, categories, and content types to discover useful posts from every active section of the site.',
+      placeholder: 'Search by keyword, business, topic, category, or title',
     },
-    resultsTitle: 'Latest searchable content',
+    resultsTitle: 'Latest articles and listings',
   },
   create: {
     metadata: {
