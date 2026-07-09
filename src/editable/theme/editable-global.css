@@ -96,9 +96,31 @@ body {
   font-family: var(--editable-font-body);
 }
 
-::selection {
-  background: color-mix(in oklab, var(--slot4-accent-fill) 28%, transparent);
-  color: var(--slot4-page-text);
+.editable-site-root ::selection {
+  background: #f2b705;
+  color: #061a20;
+}
+
+@keyframes discussion-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes discussion-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.discussion-float {
+  animation: discussion-float 5.5s ease-in-out infinite;
+}
+
+.discussion-slider {
+  animation: discussion-slide 34s linear infinite;
+}
+
+.discussion-slider:hover {
+  animation-play-state: paused;
 }
 
 ::-webkit-scrollbar-track {

@@ -9,6 +9,7 @@ import { SITE_CONFIG, type TaskKey } from '@/lib/site-config'
 import type { SitePost } from '@/lib/site-connector'
 import { EditableSiteShell } from '@/editable/shell/EditableSiteShell'
 import { pagesContent } from '@/editable/content/pages.content'
+import { Ads } from '@/lib/ads'
 
 export const revalidate = 3
 
@@ -30,7 +31,10 @@ const getImage = (post: SitePost) => {
   return media || compactRaw(content.featuredImage) || compactRaw(content.image) || compactRaw(content.thumbnail) || images || ''
 }
 const compactRaw = (value: unknown) => typeof value === 'string' ? value.trim() : ''
-const summaryOf = (post: SitePost) => post.summary || compactRaw(getContent(post).description) || compactRaw(getContent(post).excerpt) || ''
+const summaryOf = (post: SitePost) => {
+  const raw = post.summary || compactRaw(getContent(post).description) || compactRaw(getContent(post).excerpt) || ''
+  return stripHtml(raw).replace(/\s+/g, ' ').trim()
+}
 
 const matches = (post: SitePost, query: string, category: string, task: string) => {
   const content = getContent(post)
@@ -90,15 +94,18 @@ export default async function SearchPage({ searchParams }: { searchParams?: Prom
 
   return (
     <EditableSiteShell>
-      <main className="min-h-screen bg-[var(--editable-page-bg,#fff7ee)] text-[var(--editable-page-text,#2f1d16)]">
+      <main className="min-h-screen bg-[var(--editable-page-bg)] text-[var(--slot4-page-text)]">
+        <div className="mx-auto max-w-6xl px-4 py-6">
+          <Ads slot="header" showLabel eager className="mx-auto w-full" />
+        </div>
         <section className="mx-auto max-w-[var(--editable-container)] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
-          <div className="grid gap-8 rounded-[2.5rem] border border-[var(--editable-border)] bg-white/70 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.08)] backdrop-blur md:grid-cols-[0.8fr_1.2fr] lg:p-10">
+          <div className="grid gap-8 rounded-xl border border-[var(--editable-border)] bg-white p-6 shadow-sm md:grid-cols-[0.8fr_1.2fr] lg:p-10">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.28em] opacity-55">{pagesContent.search.hero.badge}</p>
-              <h1 className="mt-5 text-5xl font-black leading-[0.92] tracking-[-0.08em] sm:text-7xl">{pagesContent.search.hero.title}</h1>
-              <p className="mt-6 max-w-xl text-base font-semibold leading-8 opacity-70">{pagesContent.search.hero.description}</p>
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#185d63]">{pagesContent.search.hero.badge}</p>
+              <h1 className="mt-5 text-4xl font-black leading-tight tracking-normal sm:text-5xl">{pagesContent.search.hero.title}</h1>
+              <p className="mt-6 max-w-xl text-base font-semibold leading-8 text-[#516176]">{pagesContent.search.hero.description}</p>
             </div>
-            <form action="/search" className="self-end rounded-[2rem] border border-[var(--editable-border)] bg-[var(--editable-page-bg,#fff7ee)] p-4 sm:p-5">
+            <form action="/search" className="self-end rounded-xl border border-[var(--editable-border)] bg-[#f6f8f7] p-4 sm:p-5">
               <input type="hidden" name="master" value="1" />
               <label className="flex items-center gap-3 rounded-2xl border border-[var(--editable-border)] bg-white px-4 py-3">
                 <Search className="h-5 w-5 opacity-45" />
@@ -114,7 +121,7 @@ export default async function SearchPage({ searchParams }: { searchParams?: Prom
                   {enabledTasks.map((item) => <option key={item.key} value={item.key}>{item.label}</option>)}
                 </select>
               </div>
-              <button className="mt-3 inline-flex h-12 w-full items-center justify-center rounded-2xl bg-[var(--editable-page-text,#2f1d16)] px-6 text-sm font-black uppercase tracking-[0.18em] text-[var(--editable-page-bg,#fff7ee)] transition hover:-translate-y-0.5" type="submit">Search</button>
+              <button className="mt-3 inline-flex h-12 w-full items-center justify-center rounded-md bg-[#185d63] px-6 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5" type="submit">Search</button>
             </form>
           </div>
 
@@ -136,6 +143,9 @@ export default async function SearchPage({ searchParams }: { searchParams?: Prom
               <p className="mt-3 text-sm font-semibold opacity-60">Try a different keyword, task type, or category.</p>
             </div>
           )}
+          <div className="mx-auto max-w-6xl px-4 py-6">
+            <Ads slot="footer" showLabel className="mx-auto w-full" />
+          </div>
         </section>
       </main>
     </EditableSiteShell>
