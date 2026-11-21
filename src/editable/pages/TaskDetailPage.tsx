@@ -201,12 +201,11 @@ function viewsOf(post: SitePost) {
 function authorOf(post: SitePost) {
   return asText(getContent(post).author) || asText(getContent(post).byline) || 'Editorial Team'
 }
-function publishedOf(post: SitePost) {
-  const raw = asText(getContent(post).publishedAt) || asText(getContent(post).date) || asText(getContent(post).createdAt) || (post as unknown as { createdAt?: string }).createdAt || ''
-  if (!raw) return ''
-  const d = new Date(raw)
-  if (Number.isNaN(d.getTime())) return raw
-  return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
+// This site does not show a publish date on post pages. Both callers already cope with an
+// empty value - the byline falls back to the site name, and the meta row is behind a
+// truthiness check - so returning '' switches the date off without touching the layout.
+function publishedOf(_post: SitePost) {
+  return ''
 }
 
 function ArticleDetail({ post, related, comments }: { post: SitePost; related: SitePost[]; comments: Array<{ id: string; name: string; comment: string; createdAt: string }> }) {
